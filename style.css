@@ -3,11 +3,11 @@
     padding: 0;
     text-decoration: none;
     list-style-type: none;
+    font-family: 'Poppins', sans-serif;
 }
 
 html{
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -44,9 +44,8 @@ h2 span:last-child{
 
 p{
     font-weight: 400;
-    line-height: 1.65em;
+    line-height: 1.65;
     font-size: 1.05em;
-    letter-spacing: ;
     color: hsl(0, 0%, 98%);
 }
 
@@ -102,7 +101,7 @@ p{
 .intro-component-form{
     background-color: hsl(0, 0%, 100%);
     border-radius: 10px;
-    padding: 18px 20px 40px 23px;
+    padding: 25px 20px 40px 23px;
     box-shadow: 0 7px 0 0 hsla(0, 0%, 0%, 0.15);
 }
 
@@ -110,44 +109,109 @@ form{
     margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"]{
-    font-family: 'Poppins', sans-serif;
+form .field{
     width: 100%;
-    padding: 16px 0 16px 17px;
-    margin: 9px 0;
+    margin-bottom: 15px;
+}
+
+form .field.shake{
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake{
+    0%, 100%{
+        margin-left: 0;
+    }
+    20%, 80%{
+        margin-left: -12px; 
+    }
+    40%, 60%{
+        margin-left: 12px; 
+    }
+}
+
+form .field .input-area{
+    position: relative;
+}
+
+form input{
+    width: 100%;
+    outline: none;
     border: none;
+    padding: 16px 0 16px 30px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    margin: 0;
     border: 1px solid hsl(246, 25%, 77%);
-    border-radius: 4px;
+    border-bottom-width: 2px;
     box-sizing: border-box;
     transition: 0.5s;
 }
 
 input[type="text"]:focus{
-    border: 1px solid hsl(249, 10%, 26%) ;
+    border: 1px solid hsl(153, 60%, 45%);
 }
 
-::placeholder{
-    font-family: 'Poppins', sans-serif;
+form .field.error input{
+    border-color: hsl(354, 70%, 54%);
+}
+
+form .field.err input{
+    color: hsl(0, 100%, 74%);
+}
+
+form input::placeholder{
     color: hsla(249, 10%, 26%,0.7);
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+form .field i{
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    pointer-events: none;
+    transform: translateY(-50%);
+} 
+
+form .field .icon{
+    left: 15px;
+    color: #bfbfbf;
+}
+
+form .field .error-icon{
+    right: 20px;
+    color: hsl(0, 100%, 74%);
+}
+
+form .field .error-txt{
+    color: hsl(0, 100%, 74%);
+    margin-top: 5px;
+    text-align: right;
+    font-style: italic;
+    font-size: 0.78em;
+}
+
+form .field .error{
+    display: none;
+}
+
+form .field.error .error{
+    display: block;
 }
 
 input[type=submit] {
     background-color: hsl(154, 59%, 51%);
-    font-family: 'Poppins', sans-serif;
     font-size: 1.03em;
     font-weight: 500;
     color: hsl(0, 0%, 97%);
     text-align: center;
-    padding: 16px 0 13px;
+    padding: 14px 0 12px;
     border: none;
-    width: 100%;
     border-radius: 6px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 5px;
     box-shadow: 0 4px 0 0 hsl(153, 60%, 45%);
 }
 
@@ -155,6 +219,7 @@ input[type=submit]:hover{
     background-color: hsla(154, 59%, 51%,0.7);
     box-shadow: 0 4px 0 0 hsl(153, 60%, 45%);
 }
+
 
 .form-footer{
     text-align: center;
@@ -177,6 +242,13 @@ input[type=submit]:hover{
     text-decoration: underline;
 }
 
+@media only screen and (min-width: 768px){
+    .intro-component-container{
+        padding: 95px 60px 70px;
+    }   
+
+}
+
 @media only screen and (min-width: 1000px){
     body{
         background-image: url("images/bg-intro-desktop.png");
@@ -185,6 +257,7 @@ input[type=submit]:hover{
         background-size: cover;
         background-color:  hsl(0, 100%, 74%);
         min-height: 100vh;
+        overflow: hidden;
     }
 
     h1{
@@ -210,18 +283,19 @@ input[type=submit]:hover{
     }
 
     .intro-component-container{
-        padding: 110px 130px 40px;
+        padding: 90px 130px 5px;
     }
 
     .intro-component-content{
         display: flex;
         flex-direction: row;
         gap: 30px;
+        align-items: center;
     }
 
     .intro-component-section-1{
         flex: 50%;
-        padding-top: 155px;
+        padding-top: 30px;
     }
 
     .intro-header-content{
@@ -241,23 +315,35 @@ input[type=submit]:hover{
         border-radius: 10px;
         padding: 25px 35px 40px 35px;
     }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"]{
-        padding: 16px 0 16px 30px;
-        font-weight: 500;
-        font-size: 0.9em;
-    }
-
-    ::placeholder{
-        font-family: 'Poppins', sans-serif;
-        color: hsla(249, 10%, 26%,0.6);
-        font-size: 0.9em;
-        font-weight: 700;
-    }
     
+    form .field i{
+        font-size: 25px;
+    }
+
     input[type=submit] {
         font-size: 1.0em;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+                
+    h1{
+        font-size: 3.1em;
+        margin: 0 auto 30px;
+    }
+    
+    p{
+        font-size: 1em;
+        line-height: 1.8;
+    }
+
+    .intro-component-container{
+        padding: 90px 155px 5px;
+    }
+
+    .intro-component-content{
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
     }
 }
