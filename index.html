@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Zuri | Intro component with sign up form</title>
@@ -33,21 +34,45 @@
           </div>
           <div class="intro-component-form">
             <form action="#">
-              <div class="form-first-name">
-                <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+              <!--First name-->
+              <div class="field first-name">
+                <div class="input-area">
+                  <input type="text" id="first-name" placeholder="First Name">
+                  <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">First Name cannot be empty</div>
               </div>
-              <div class="form-last-name">
-                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+              
+              <!--Last Name-->
+              <div class="field last-name">
+                <div class="input-area">
+                  <input type="text" id="last-name" placeholder="Last Name">
+                  <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Last Name cannot be empty</div>
               </div>
-              <div class="form-email-id">
-                <input type="email" id="email" name="email" placeholder="Email Address" required>
+              
+              <!--Email-->
+              <div class="field email">
+                <div class="input-area">
+                  <input type="email" id="email" placeholder="Email Address">
+                  <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Email cannot be empty</div>
               </div>
-              <div class="form-password">
-                <input type="password" id="password" placeholder="Password" required>
+             
+              <!--Password-->
+              <div class="field password">
+                <div class="input-area">
+                  <input type="password" id="password" placeholder="Password">
+                  <i class="error error-icon fas fa-exclamation-circle"></i>
+                </div>
+                <div class="error error-txt">Password cannot be empty</div>
               </div>
-              <div class="form-submit">
+              
+              <!-- <div class="form-submit"> -->
                 <input type="submit" value="CLAIM YOUR FREE TRIAL" id="claim-trial">
-              </div>
+              <!-- </div> -->
             </form>
             <div class="form-footer">
               <p class="p-1">
@@ -60,11 +85,13 @@
       </div>
     </div>
   </main>
+  <script src="script.js"></script>
   <footer>
     <div class="attribution">
       Task by: Zuri  ||
       Coded by: <a href="https://github.com/danielswift10">daniel swift</a>
     </div>
   </footer>
+  
 </body>
 </html>
