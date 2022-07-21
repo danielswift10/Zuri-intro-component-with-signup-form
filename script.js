@@ -43,13 +43,12 @@ form.onsubmit = (e) => {
    function checkEmail(){
     let pattern = /\b[a-z0-9._-]+@[a-z_-]+(?:\.[a-z]+)+\b/; //pattern to validate email
     if(!eInput.value.match(pattern)){ //if pattern not matched with user entered value
-        eField.classList.add("error", "err-1");
+        eField.classList.add("error", "err");
         let errorTxt = eField.querySelector(".error-txt");
         // if email is not empty then looks like this is not an email until email adderss is valid
         (eInput.value !== "") ? errorTxt.innerText = "Looks like this is not an email" : errorTxt.innerText = "Email cannot be empty";
     }else{
-        eField.classList.remove("error");
-        eField.classList.add("err");
+        eField.classList.remove("error", "err");
     }
    }
 
